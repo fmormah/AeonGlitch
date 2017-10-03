@@ -1,0 +1,107 @@
+.email{
+    #header-title{
+        display: none;
+    } 
+    .tooltipster-base{
+        height: 80% !important;
+        min-width: 95% !important;
+        overflow-y: scroll !important;
+
+        h4{
+            margin:20px 0;
+            font-size:18px;
+        }
+        p{
+            margin: 20px 0;
+            line-height: 24px;
+        }
+        a{
+            color: lightblue;
+        }
+    }
+    .closeNews{
+        color: red;
+        z-index: 100;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-weight: bold;
+    }
+}
+.email-content{
+    margin-top: 75px;
+    height: 70%;
+    overflow: scroll;
+    .email-item{
+        width: 100%;
+        position: relative;
+        height: 120px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+
+        h3{
+            position: absolute;
+            z-index: 10;
+            font-size: 28px;
+            margin: 10px;
+            right: 0;
+            top: 30%;
+            color: #fff;
+            text-shadow: 2px 2px #000;
+        }
+
+        .hero-img{
+            width: 100%;
+            height: 100%;
+            background-position: left top;
+            background-size: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .info{
+            position: absolute;
+            z-index: 10;
+            bottom: 0;
+            padding: 10px 10px 15px 10px;
+            background-color: #000;
+            color: #fff;
+            font-size: 13px;
+            width: 100%;
+            opacity: 0.8;
+            box-sizing: border-box;
+
+            .date{
+                width: 50%;
+                display: inline-block;
+            }
+            .type{
+                width: 50%;
+                text-align: right;
+                display: inline-block;
+                text-transform: capitalize;
+            }
+            p{
+                margin-top: 10px;
+                width: 100%;
+                text-transform: capitalize;
+            }
+        }
+
+         button{
+            position: absolute;
+            z-index: 20;
+            height: 50px;
+            width: 50px;
+            border-radius: 35px;
+            border: 1px solid #ccc;
+            background-color: #000;
+            color: #fff;
+            right: 10px;
+            top: 4px;
+            opacity: 0.7;
+        }
+    }
+
+}

@@ -1,0 +1,43 @@
+
+.items{
+    h1{display: none;}
+    .nav-container{
+        opacity: 1;
+    }
+
+    .item-list-content{
+        margin-top: 70px;
+        text-align: center;
+        position: relative;
+        height: 76%;
+        overflow-y: scroll;
+
+        .info-holder{
+            width: 100%;
+            margin: 20px 0;
+            position: relative;
+            .item{
+                width: 70%;
+                display: inline-block;
+                text-align: left;
+                box-sizing: border-box;
+                padding-left: 25px;
+            }
+            .qty{
+                display: inline-block;
+                text-align: left;
+                width: 20%;
+                margin-left: 10%;
+            }
+            .info-tip{
+                position: absolute;
+                left: 0;
+                top: -2px;
+                border-radius: 12px;
+                border: 1px solid #666;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}

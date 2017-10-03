@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+</head>
+
+<body>
+  
+  <div id="main">
+
+    <label>Type </label> <input id="type" value="" placeholder="AvatarId">
+    <br/>
+    <label>Move Id </label> <input id="moveid" value="" placeholder="Move ID">
+    <br/>
+    <label>level </label> <input id="level" value="" placeholder="lvl">
+    <br/>
+    <button onclick="addMove()">ADD</button>
+  </div>
+
+  <script type="text/javascript">
+    Parse.initialize("KqlL5WS8by5F2Jb3TTWjrpP3WToMPOcSvJw9OHJr", "BEWwc12nd5BCksbbNLOwkOJMu9ahDa6vmeVmNmYr");
+    
+    function addMove(){
+    	var UnitObject = Parse.Object.extend("Avatars");
+	    var query = new Parse.Query(UnitObject);
+      query.equalTo("objectId", $('#type')[0].value);
+      query.find({
+        success: function(results) {
+          // Do something with the returned Parse.Object values
+          for (var i = 0; i < results.length; i++) {
+            var object = results[i];
+            var originalArray = object.get('abilities');
+            originalArray.push(['locked',$('#moveid')[0].value, $('#level')[0].value]);
+            var newArray = originalArray;
+            console.log(newArray);
+            object.set('abilities',newArray);
+            object.save(null, {
+              success: function(object) {
+                alert('New Type added');
+              },
+              error: function(model, error) {
+                alert(error);
+              }
+            });
+          }
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
+    
+  </script>
+</body>
+
+</html>

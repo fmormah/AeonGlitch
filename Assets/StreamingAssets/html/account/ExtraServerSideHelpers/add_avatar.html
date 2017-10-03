@@ -1,0 +1,70 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+</head>
+
+<body>
+  
+  <div id="main">
+
+    <label>Type </label> <input id="type" value="" placeholder="New avatar type">
+    <br/>
+    <label>Rarity </label> <input type="number" min="1" max="99" id="rarity" value="" placeholder="Number of stars">
+    <br/>
+    <label>Def </label> <input type="number" min="1" max="99" id="def" value="" placeholder="Number of stars">
+    <br/>
+    <label>HP </label> <input type="number" min="1" max="99" id="hp" value="" placeholder="Number of stars">
+    <br/>
+    <label>AP </label> <input type="number" min="1" max="99" id="ap" value="" placeholder="Number of stars">
+    <br/>
+    <label>atk_range </label> <input type="number" min="1" max="99" id="atk_rng" value="" placeholder="Number of stars">
+    <br/>
+    <label>move_range </label> <input type="number" min="1" max="99" id="move_rng" value="" placeholder="Number of stars">
+    <br/>
+    <label>Evasion </label> <input type="number" min="1" max="99" id="eva" value="" placeholder="Number of stars">
+    <br/>
+    <label>dmg point</label> <input type="number" min="1" max="99" id="dmg_pnt" value="" placeholder="Number of stars">
+    <br/>
+    <button onclick="addAvatarType()">ADD</button>
+  </div>
+
+  <script type="text/javascript">
+    Parse.initialize("KqlL5WS8by5F2Jb3TTWjrpP3WToMPOcSvJw9OHJr", "BEWwc12nd5BCksbbNLOwkOJMu9ahDa6vmeVmNmYr");
+    
+    function addAvatarType(){
+    	var UnitObject = Parse.Object.extend("Avatars");
+	    var unitObject = new UnitObject();
+
+	     unitObject.set("type", $('#type')[0].value);
+	     unitObject.set("rarity", parseInt($('#rarity')[0].value));
+	     unitObject.set("abilities", []);
+       unitObject.set("Defence", parseInt($('#def')[0].value));
+       unitObject.set("HP", parseInt($('#hp')[0].value));
+       unitObject.set("AP", parseInt($('#ap')[0].value));
+       unitObject.set("atk_range", parseInt($('#atk_rng')[0].value));
+       unitObject.set("move_range", parseInt($('#move_rng')[0].value));
+       unitObject.set("Evasion", parseInt($('#eva')[0].value));
+       unitObject.set("Dmg", parseInt($('#dmg_pnt')[0].value));
+	     unitObject.set("collectionType", "avatar");
+	      unitObject.save(null, {
+	      success: function(object) {
+	        alert('New Type added');
+	      },
+	      error: function(model, error) {
+	        alert(error);
+	      }
+	    });
+    }
+    
+  </script>
+</body>
+
+</html>

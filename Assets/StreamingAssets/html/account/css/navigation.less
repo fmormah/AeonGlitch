@@ -1,0 +1,64 @@
+.nav-container{
+	position: absolute;
+    background-color: #ccc;
+    opacity: 0.8;
+    width: 100%;
+    left: 0;
+    height: @nav-bar-height;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    transition-duration: 0.5s;
+    z-index: 1000;
+}
+#top-Nav{
+	top:-100px;
+	&.active{
+		top:0;
+	}
+}
+#bottom-Nav{
+	bottom:-100px;
+	&.active{
+		bottom:0;
+	}
+}
+.main-nav-btn-container{
+	height:100%;
+	position: relative;
+	box-sizing: border-box;
+}
+.back-btn{
+	height: 100%;
+    width: 53px;
+    padding-top: 5%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #000;
+    display: block;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.nav-btn{
+	height: 100%;
+    width: 45px;
+    box-sizing: border-box;
+    margin: 0 2%;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    position: relative;
+    top: -6px;
+    padding: 0;
+    display: inline-block;
+    overflow: visible;
+    span{
+	    display: block;
+	    font-size: 11px;
+	    position: absolute;
+	    width: 100%;
+	    bottom: -31%;
+	    text-align: center;
+    }
+}

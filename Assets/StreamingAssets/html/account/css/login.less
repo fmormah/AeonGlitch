@@ -1,0 +1,17 @@
+.login-content{
+
+	.sign-up-options{
+		opacity: 0;
+		max-height: 0px;
+		padding: 0 10px;
+		margin: 0;
+		overflow: hidden;
+		transition-duration: 0.75s;
+		transition-property: max-height opacity;
+		&.active{
+			opacity: 1;
+			max-height: 500px;
+		}
+	}
+}
+

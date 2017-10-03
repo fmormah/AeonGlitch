@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+
+	<body>
+		
+		<div id="main-container" class="content">Aeon Glitch</div>
+
+		<script src="js/lib/react.js"></script>
+	    <script src="js/lib/react-dom.js"></script>
+	    <script src="js/lib/browser.min.js"></script>
+		<script src="js/lib/jquery.min.js"></script>
+		<script src="js/lib/jquery.tooltipster.min.js"></script>
+		<script src="js/lib/parse-latest.js"></script>
+		<script src="js/lib/owl.carousel.js"></script>
+		<script src="js/helper.js"></script>
+
+		<script type="text/babel" src="js/main-nav-helper.js"></script>
+		<script type="text/babel" src="js/map-helper.js"></script>#
+		<script type="text/babel" src="js/signin-helper.js"></script>
+		<script type="text/babel" src="js/homescreen-helper.js"></script>
+		<script type="text/babel" src="js/newsfeed-helper.js"></script>
+		<script type="text/babel" src="js/emailfeed-helper.js"></script>
+		<script type="text/babel" src="js/team-screen-helper.js"></script>
+		<script type="text/babel" src="js/character-list-screen-helper.js"></script>
+		<script type="text/babel" src="js/character-inspect-helper.js"></script>
+		<script type="text/babel" src="js/item-list-helper.js"></script>
+		<script type="text/babel" src="js/story-screen.js"></script>
+
+		<script type="text/babel">
+			//InitApp
+			if(sessionStorage.getItem("loggedIn") == void(0)){
+				loadPageContent(renderSignIn);
+			}else{
+				loadPageContent(renderHomeScreen);
+			}
+			
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+</head>
+
+<body>
+  
+  <div id="main">
+
+    <label>Name: </label> <input id="name" value="" placeholder="ability name">
+    <br/>
+    <br/>
+    Items needed
+    <br/>
+    <br/>
+    <label>item </label> <input id="desc" value="null" placeholder="description">
+    <br/>
+    <label>item </label> <input id="ap" value="null" placeholder="Action Point">
+    <br/>
+    <label>item </label> <input id="item1" value="null" placeholder="item1">
+    <br/>
+    <label>item </label> <input id="qty1" value="0" placeholder="quantity">
+    <br/>
+    <br/>
+    <label>item </label> <input id="item2" value="null" placeholder="item2">
+    <br/>
+    <label>item </label> <input id="qty2" value="0" placeholder="quantity">
+    <br/>
+    <br/>
+    <label>item </label> <input id="item3" value="null" placeholder="item3">
+    <br/>
+    <label>item </label> <input id="qty3" value="0" placeholder="quantity">
+    <br/>
+    <br/>
+    <label>item </label> <input id="item4" value="null" placeholder="item4">
+    <br/>
+    <label>item </label> <input id="qty4" value="0" placeholder="quantity">
+    <br/>
+    <br/>
+    <button onclick="addMove()">ADD</button>
+  </div>
+
+  <script type="text/javascript">
+    Parse.initialize("KqlL5WS8by5F2Jb3TTWjrpP3WToMPOcSvJw9OHJr", "BEWwc12nd5BCksbbNLOwkOJMu9ahDa6vmeVmNmYr");
+    
+    function addMove(){
+    	var UnitObject = Parse.Object.extend("MovesList");
+	    var unitObject = new UnitObject();
+
+	     unitObject.set("type", "ability");
+	     unitObject.set("name", $('#name')[0].value);
+       unitObject.set("Description", $('#desc')[0].value);
+       unitObject.set("AP", parseInt($('#ap')[0].value));
+	     unitObject.set("itemKeys", [ [$('#item1')[0].value,$('#qty1')[0].value],[$('#item2')[0].value,$('#qty2')[0].value],[$('#item3')[0].value,$('#qty3')[0].value],[$('#item4')[0].value,$('#qty4')[0].value] ]);
+	      unitObject.save(null, {
+	      success: function(object) {
+	        alert('New Type added');
+	      },
+	      error: function(model, error) {
+	        alert(error);
+	      }
+	    });
+    }
+    
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">s
+<title></title>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+
+<body>
+
+	<style type="text/css">
+	
+	</style>
+
+	<img class="actors" />
+	<div class="sub-titles-holder"></div>
+	<div class="bg-div"></div>
+	<div id="draggable-element"></div>
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="script/hardBack.js"></script>
+
+	<script type="text/javascript">
+
+
+		/**** End Scene Choice ***/
+		s.moveOn = function(){
+			$('#draggable-element').css('height','100%');
+			s.next();
+		}
+
+		s.goToFeatherMeadow = function(){
+			window.location.replace('uniwebview://progressIndex?updateto=0');
+		}
+
+	    /*********Init CS Segments ************/
+	    s.Init(function(){
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		'http://pre10.deviantart.net/4e47/th/pre/i/2012/132/d/5/fantasy_scene_by_hatnaa-d4zjsl4.jpg',
+	    		'img/intro/actor-test.png',
+	    		"Hey, you eventually got online. What took you so long!?....Anyway, how are you finding the game so far",
+	    		'Hyper'
+	    	));
+
+
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		null,
+	    		null,
+	    		"",
+	    		null,
+	    		function(){
+	    			var choice = function(){
+						var markUp = '<div onclick="s.moveOn();s.dynamicCopy=\'Ok cool. Will try my best to guide you\'" class="choice"> Not sure to be honest, I just got on </div>'+
+						'<div onclick="s.moveOn(); s.dynamicCopy=\'I know right!? Its surprisingly good. Especially for a beta. I hope they dont character wipe for release. I’m getting quite invested lol\'" class="choice"> Pretty cool actually </div>';
+						$('.sub-titles-holder').html(markUp);
+						$('#draggable-element').css('height',1);
+					}
+
+					choice();
+	    		}
+	    	));
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		null,
+	    		null,
+	    		'',
+	    		null,
+	    		function(){
+	    			$('.sub-titles-holder').html('<div class="name-slot">Hyper</div>'+s.dynamicCopy);
+	    		}
+	    	));
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		null,
+	    		null,
+	    		"Let's get you started on the basics. But first, let me add you to my friends list",
+	    		'Hyper'
+	    	));
+
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		null,
+	    		null,
+	    		"This lets us see when the other one is online.",
+	    		'Hyper'
+	    	));
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		null,
+	    		null,
+	    		"Which is super handy incase one of us needs help with a quest or something",
+	    		'Hyper'
+	    	));
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		null,
+	    		null,
+	    		"<p class=\"notification\">'Hyper' added to Friends List</p>",
+	    		null
+	    	));
+
+	    	s.addSegment(new s.segmentObj('test-cs',
+	    		'test/1',
+	    		null,
+	    		null,
+	    		"Ok let's roll. I know a good levelling spot that's quiet at this time. Go to maps and Select <span class=\"location\">'Feather Meadow'</span>. Let's go find some trouble :P",
+	    		'Hyper'
+	    	));
+
+	    	
+	    },null,s.goToFeatherMeadow);
+	    /*********************/
+
+	</script>
+
+
+</body>
+
+</html>

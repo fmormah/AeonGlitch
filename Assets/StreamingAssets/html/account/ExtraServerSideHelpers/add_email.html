@@ -1,0 +1,80 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+</head>
+
+<body>
+  
+  <div id="main">
+
+    <label>User ID </label> <input id="id-src" value="" placeholder="User ID">
+    <br/>
+    <br/>
+    <br/>
+
+    <label>Type </label>
+    <select id="type" placeholder="selectType">
+      <option value="information">story</option>
+      <option value="event">server</option>
+    </select>
+    <br/>
+    <br/>
+    <br/>
+
+    <label>Image Source URL </label> <input id="img-src" value="" placeholder="Image URL">
+    <br/>
+    <br/>
+    <br/>
+
+    <label>Header Title</label> <input id="news-header" value="" placeholder="News Header">
+    <br/>
+    <br/>
+    <br/>
+
+  
+    <textarea rows="50" cols="100" id="news-html" placeholder="Enter HTML here" form="usrform"></textarea>
+    <br/>
+    <br/>
+    <br/>
+
+    <button onclick="addNews()">ADD</button>
+  </div>
+
+  <script type="text/javascript">
+
+    console.log($('#news-html')[0].value);
+    Parse.initialize("KqlL5WS8by5F2Jb3TTWjrpP3WToMPOcSvJw9OHJr", "BEWwc12nd5BCksbbNLOwkOJMu9ahDa6vmeVmNmYr");
+    
+    function addEmail(){
+    	var UnitObject = Parse.Object.extend($('#id-src')[0].value+"_emailFeed");
+	    var unitObject = new UnitObject();
+
+	     unitObject.set("subtype", $('#type')[0].value);
+       unitObject.set("type", "News");
+	     unitObject.set("img", $('#img-src')[0].value);
+       unitObject.set("header", $('#news-header')[0].value);
+       unitObject.set("html", $('#news-html')[0].value);
+	      unitObject.save(null, {
+	      success: function(object) {
+	        alert('New Type added');
+	      },
+	      error: function(model, error) {
+	        alert(error);
+	      }
+	    });
+    }
+
+    
+    
+  </script>
+</body>
+
+</html>

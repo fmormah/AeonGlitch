@@ -1,0 +1,216 @@
+
+.character-inspect-content{
+    width: 100%;
+    height: 74%;
+    position: relative;
+    z-index: 100;
+    top: 56px;
+    box-sizing: border-box;
+    border:1px solid #000;
+
+    .squad{
+        height: 100%;
+        font-size: 12px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        h3{
+            position: relative;
+            padding: 14px 14px 5px 14px;
+            text-align: center;
+        }
+        .squad-member{
+            height: 20%;
+            position: relative;
+
+            .pic{
+                    height: 188px;
+                    width: 141px;
+                    border: 1px solid #000;
+                    border-radius: 5px;
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+            }
+
+            .name{
+                position: absolute;
+                top: 5px;
+                left: 160px;
+            }
+
+            .lvl{
+                position: absolute;
+                left: 160px;
+                top: 50px;
+            }
+
+            .hp{
+                position: absolute;
+                left: 160px;
+                top: 13px;
+            }
+
+            .mp{
+                position: absolute;
+                left: 160px;
+                top: 32px;
+            }
+
+            .xp{
+                height: 3px;
+                width: 78px;
+                border: 1px solid #000;
+                padding: 1px;
+                position: absolute;
+                top: 64px;
+                left: 160px;
+                .xp-bar{
+                    background-color: #000;
+                    width: 50%;
+                    height: 100%;
+                }
+            }
+            .rarity-holder{
+                width: 120px;
+                height: 15px;
+                border: 1px solid #000;
+                position: absolute;
+                left: 156px;
+                top: 87px;
+                .star{
+                    width:25px;
+                    height: 25px;
+                    float:left;
+                    box-sizing: border-box;
+                }
+            }
+
+            .lore-btn{
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                right: 10px;
+                top: 10px;
+                text-align: center;
+                border-radius: 16px;
+                background-color: #fff;
+                border: 1px solid #000;
+            }
+
+            .btn-menu{
+                width: 122px;
+                left: 156px;
+                height: 30px;
+                position: absolute;
+                border: 1px solid #000;
+                border-radius: 20px;
+                &.stat{
+                    top: 111px;
+                }
+                &.ability{
+                    top: 141px;
+                }
+                &.gems{
+                    top: 171px;
+                }
+            }
+
+            #character-info-holder{
+                width: 100%;
+                position: relative;
+                top: 202px;
+            }
+        }
+    }
+
+    .info-holder{
+        text-align: center;
+        padding: 5px 0;
+        .stat{
+            display: inline-block;
+            width: 33%;
+            text-align: right;
+        }
+        .value{
+            display: inline-block;
+            width: 33%;
+            text-align: center;
+        }
+        .info-tip{
+            position: relative;
+            margin-top: 3px;
+            text-align: center;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid #666;
+        }
+
+        .ability{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            margin: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            border-radius: 6px;
+            position: relative;
+            vertical-align: top;
+            transition-duration: 1s;
+
+            &.true{
+                opacity: 0.5;
+            }
+
+            &.active{
+                border: 2px solid #268bd2;
+            }
+
+            .move-name{
+                bottom: -27px;
+                position: relative;
+                width: 200%;
+                left: -50%;
+            }
+            .move-lvl{
+                position: absolute;
+                top: -6px;
+                left: -6px;
+                &.inactive{
+                    color:red;
+                    font-weight:bold;
+                }
+                &.active{
+                    color:green;
+                    font-weight:bold;
+                }
+
+            }
+            .info-tip{
+                right: -25px;
+                top: -13px;
+            }
+            .move-icon{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+    }
+  
+}
+
+.item-key-holder{
+    width:100%;
+    margin-bottom:10px;
+    font-size:14px;
+    .name{
+        display: inline-block;
+        padding-right:10px;
+        text-align: left;
+    }
+    .qty{
+        float:right;
+    }
+}
